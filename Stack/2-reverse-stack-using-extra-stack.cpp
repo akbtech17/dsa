@@ -5,8 +5,7 @@
 using namespace std;
 
 //tc -> n square
-//sc -> n
-
+//sc -> n (extra stack)
 void transferElement(int n, stack<int> &src, stack<int> &dest) {
 	while (n--) {
 		dest.push(src.top());
@@ -30,7 +29,7 @@ void reverseStack1(stack<int> &stk1) {
 }
 
 //tc -> n
-//sc -> n
+//sc -> n (extra stack)
 void reverseStack2(stack<int> &stk1) {
 	stack<int> stk2;
 	while (!stk1.empty()) {
@@ -39,6 +38,14 @@ void reverseStack2(stack<int> &stk1) {
 	}
 	swap(stk1, stk2);
 	return ;
+}
+
+void reverseStack3(stack<int> &stk) {
+	if (stk.size() == 0 or stk.size() == 1) return;
+	int top_element = stk.top();
+	stk.pop();
+
+	return;
 }
 
 
