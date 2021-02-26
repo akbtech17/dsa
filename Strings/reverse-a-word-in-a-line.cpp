@@ -21,18 +21,19 @@ void reverseWordInLine(char *line, int len) {
 
 	for (int i = 0; i < len; ++i)
 	{
-		if (s == -1) {
-			while (s == -1 and line[i] == ' ') {
-				i++;
-			}
+		if (line[i] == ' ' and s == -1) continue;
+		else if (line[i] != ' ' and s == -1) {
 			s = i;
-			continue;
-		}
-		if (line[i] == ' ') {
-			int e = i - 1;
+
+			while (i < len and line[i] != ' ') i++;
+			e = i - 1;
+
 			reverseWord(line, s, e);
 			s = -1;
+
 		}
+
+
 	}
 	return;
 }
