@@ -12,17 +12,14 @@ void printUnion(int* arr1, int n1, int* arr2, int n2) {
 	set<int> s;
 	while (i < n1 and j < n2) {
 		if (arr1[i] < arr2[j]) {
-			// cout << arr1[i++] << " ";
 			s.insert(arr1[i]);
 			i++;
 		}
 		else if (arr1[i] > arr2[j]) {
-			// cout << arr2[j++] << " ";
 			s.insert(arr2[j]);
 			j++;
 		}
 		else {
-			// cout << arr1[i] << " ";
 			s.insert(arr1[i]);
 			i++;
 			j++;
@@ -30,13 +27,11 @@ void printUnion(int* arr1, int n1, int* arr2, int n2) {
 	}
 
 	while (i < n1)
-		// cout << arr1[i++] << " ";{}
 	{	s.insert(arr1[i]);
 		i++;
 	}
 
 	while (j < n2)
-		// cout << arr2[j++] << " ";
 	{
 		s.insert(arr2[j]);
 		j++;
@@ -62,7 +57,6 @@ void printIntersection(int* arr1, int n1, int* arr2, int n2) {
 		else if (arr2[j] < arr1[i])
 			j++;
 		else {
-			// cout << arr2[j] << " ";
 			s.insert(arr2[j]);
 			i++;
 			j++;
