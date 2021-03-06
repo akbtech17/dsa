@@ -25,16 +25,24 @@ int main() {
 		temp = temp >> 1;
 	}
 
-	int setContainingBit = 0;
+	int s1 = 0;
+	int s2 = 0;
 
 	//making the mask for the diff bit, to seperate the sets
 	int mask = (1 << bitPos);
 	//seperating the sets
-	for (int i = 0; i < n; ++i) {
-		if ((mask & arr[i]) == 0) setContainingBit ^= arr[i];
+	for (int i = 1; i <= n ; ++i) {
+		if ((mask & i) == 0) s1 ^= i;
+		else s2 ^= i;
+	}
+
+	for (int i = 0; i < n - 2 ; ++i) {
+		if ((mask & arr[i]) == 0) s1 ^= arr[i];
+		else s2 ^= arr[i];
 	}
 
 	//printing the unique numbers...
-	cout << setContainingBit << " " << (xorNums ^ setContainingBit);
+	cout << s1 << " " << s2;
+
 	return 0;
 }

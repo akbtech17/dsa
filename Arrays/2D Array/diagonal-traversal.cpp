@@ -3,6 +3,38 @@
 #define MX 100
 using namespace std;
 
+void printDiagonally(int arr[][MX], int row, int col) {
+	int i = 0;
+	int j = 0;
+
+	bool isUp = true;
+
+	for (int k = 0; k < row * col;) {
+		if (isUp) {
+			for (; i >= 0 and j < col; i--, j++) {
+				cout << arr[i][j] << " ";
+				k++;
+			}
+
+			//set i j according to the direction
+			if (i < 0 and j <= col - 1) i = 0;
+			if (j == col) i = i + 2, j--;
+		}
+		else {
+			for (; j >= 0 and i < row; j--, j++) {
+				cout << arr[i][j] << " ";
+				k++;
+			}
+
+			//set i j according to the direction
+			if (j < 0 and i <= row - 1) j = 0;
+			if (i == row) j = j + 2, i--;
+		}
+	}
+
+	return;
+}
+
 int main() {
 	int row, col;
 	int arr[MX][MX];
@@ -10,27 +42,6 @@ int main() {
 	for (int i = 0; i < row; i++)
 		for (int j = 0; j < col; j++)
 			cin >> arr[i][j];
-
-	for (int j = 0; j < col; ++j)
-	{
-		int r = 0;
-		int c = j;
-		// cout << arr[i][j];
-
-		while (c >= 0 and r < row)
-			cout << arr[r++][c--] << " ";
-
-	}
-
-	for (int i = 1; i < row; ++i)
-	{
-		int r = i;
-		int c = col - 1;
-		// cout << arr[i][j];
-
-		while (c >= 0 and r < row)
-			cout << arr[r++][c--] << " ";
-
-	}
+	printDiagonally(arr, row, col);
 	return 0;
 }

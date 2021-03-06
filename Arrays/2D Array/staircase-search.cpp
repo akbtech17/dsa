@@ -13,8 +13,11 @@ void input2D(int arr[][MX], int &row, int &col) {
 	return;
 }
 
+//tc - row+col
+//sc - 1
 bool searchInSorted2d(int arr[][MX], int row, int col, int key) {
-	if (key<arr[0][0] or key>arr[row - 1][col - 1]) return false;
+	if (key<arr[0][0] or key>arr[row - 1][col - 1])
+		return false;
 	//start from the top right corner
 	int i = 0;
 	int j = col - 1;
