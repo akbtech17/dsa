@@ -21,7 +21,7 @@ void printDiagonally(int arr[][MX], int row, int col) {
 			if (j == col) i = i + 2, j--;
 		}
 		else {
-			for (; j >= 0 and i < row; j--, j++) {
+			for (; j >= 0 and i < row; j--, i++) {
 				cout << arr[i][j] << " ";
 				k++;
 			}
@@ -30,6 +30,7 @@ void printDiagonally(int arr[][MX], int row, int col) {
 			if (j < 0 and i <= row - 1) j = 0;
 			if (i == row) j = j + 2, i--;
 		}
+		isUp = !isUp;
 	}
 
 	return;
