@@ -24,29 +24,22 @@ void spiralAntiClockwise(int arr[][MX], int row, int col) {
 	while (sr <= er and sc <= ec) {
 
 		//print left col
-		for (int r = sr; r <= er; ++r) cout << arr[r][sc] << ", ";
+		for (int i = sr; i <= er; ++i) cout << arr[i][sc] << ", ";
 		sc++;
-		if (sr > er or sc > ec) break;
-
 		//print bottom row
-		for (int c = sc; c <= ec; ++c) cout << arr[er][c] << ", ";
+		for (int j = sc; j <= ec; ++j) cout << arr[er][j] << ", ";
 		er--;
-		if (sr > er or sc > ec) break;
-
 		//print right col
-		for (int r = er; r >= sr; --r) cout << arr[r][ec] << ", ";
-		ec--;
-		if (sr > er or sc > ec) break;
-
-
+		if (sc <= ec) {
+			for (int i = er; i >= sr; --i) cout << arr[i][ec] << ", ";
+			ec--;
+		}
 
 		//print top row
-		for (int c = ec; c >= sc; --c) cout << arr[sr][c] << ", ";
-		sr++;
-		if (sr > er or sc > ec) break;
-
-
-
+		if (sr <= er) {
+			for (int j = ec; j >= sc; --j) cout << arr[sr][j] << ", ";
+			sr++;
+		}
 	}
 	cout << "END";
 	return;
