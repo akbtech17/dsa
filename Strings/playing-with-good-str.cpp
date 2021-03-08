@@ -1,4 +1,11 @@
 // playing - with - good - str.cpp
+
+// A Good String is a string which contains
+// only vowels (a,e,i,o,u) . Given a string S,
+// print a single positive integer N where N is
+// the length of the longest substring of
+// S that is also a Good String.
+
 #include <iostream>
 #include <ctype.h>
 #define MX 100000
@@ -19,7 +26,6 @@ bool isGoodChar(char ch) {
 int longesGoodStr(char* str) {
 	int ans = 0;
 	int n = lenStr(str);
-
 
 	int curr_cnt = 0;
 	for (int i = 0; i < n; ++i)

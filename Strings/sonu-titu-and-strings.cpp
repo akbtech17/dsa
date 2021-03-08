@@ -1,4 +1,12 @@
 // sonu - titu - and - strings.cpp
+
+// Sonu and Titu have two Strings.
+// They want to make their strings anagrams of each other.
+// They can either delete a character from string of Titu
+// and add a character to the string of Sonu.
+// Find the minimum number of operations
+// required to make the strings anagrams of each other.
+
 #include <iostream>
 #define MX 100000
 using namespace std;

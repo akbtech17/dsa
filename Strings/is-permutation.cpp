@@ -15,7 +15,6 @@ bool isPermutation(char *str1, int len1, char *str2, int len2) {
 	for (int i = 0; i < len2; ++i) {
 		fre[str2[i] - 'a']--;
 	}
-
 	for (int i = 0; i < len1; ++i)
 	{
 		if (fre[i] != 0) return false;

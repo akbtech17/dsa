@@ -3,10 +3,8 @@
 using namespace std;
 
 void printMat(char arr[][MX], int row, int col) {
-	for (int i = 0; i < row; ++i)
-	{
-		for (int j = 0; j < col; ++j)
-		{
+	for (int i = 0; i < row; ++i){
+		for (int j = 0; j < col; ++j){
 			cout << arr[i][j] << " ";
 		}
 		cout << endl;
@@ -18,7 +16,7 @@ void printMat(char arr[][MX], int row, int col) {
 //sc - 1
 void spiralClockwise(char arr[][MX], int row, int col) {
 	int sr, sc, er, ec;
-	sr = sc = 0;
+	sr = sc = 0; 	
 	er = row - 1;
 	ec = col - 1;
 	char ch = 'O';
