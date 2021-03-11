@@ -1,3 +1,4 @@
+// mirror - star - pattern.cpp
 #include <iostream>
 using namespace std;
 
