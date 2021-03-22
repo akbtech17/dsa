@@ -1,37 +1,35 @@
-// reverse - a - word - in - a - line.cpp
+// reverse - line.cpp
 #include <iostream>
-#include <string>
 #include <algorithm>
+#include <string>
 using namespace std;
 
-string reverseWordInLine(string str) {
+string reverseLine(string str) {
 	string ans;
 
-	for (int i = 0; i < str.length();) {
+	for (int i = str.length() - 1; i >= 0;) {
 		if (str[i] != ' ') {
 			//extract the word
 			string word;
-			while (i < str.length() and str[i] != ' ') {
-				word.push_back(str[i++]);
+			while (i >= 0 and str[i] != ' ') {
+				word.push_back(str[i--]);
 			}
 			reverse(word.begin(), word.end());
 			ans.append(word);
 		}
 		else {
 			ans.push_back(str[i]);
-			i++;
+			i--;
 		}
 	}
-
 	return ans;
 }
-
 
 int main() {
 	string str;
 	getline(cin, str);
 
-	cout << reverseWordInLine(str);
+	cout << reverseLine(str);
 
 	return 0;
 }

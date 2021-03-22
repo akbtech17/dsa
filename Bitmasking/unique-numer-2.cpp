@@ -32,7 +32,10 @@ int main() {
 	}
 
 	//printing the unique numbers...
-	cout << setContainingBit << " " << (xrNum ^ setContainingBit);
+	int n1 = setContainingBit;
+	int n2 = xrNum ^ setContainingBit;
+	if (n1 < n2)cout << n1 << " " << n2;
+	else cout << n2 << " " << n1;
 
 	return 0;
 }

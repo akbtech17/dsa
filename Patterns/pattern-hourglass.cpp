@@ -7,14 +7,49 @@ int main() {
 	cin >> n;
 	int total = n * 2 + 1;
 	for (int i = 1; i <= total; ++i) {
-		for (int j = 0; j <= total; ++j) {
-			if (i <= n + 1) {
-				if (j <= i - 1) cout << " ";
-				else cout << "*";
+		if (i <= n + 1) {
+			//spaces
+			for (int spaces = 1; spaces <= i - 1; ++spaces) {
+				cout << "  ";
 			}
-			else if (i > n + 1) {
-				if (j <= n - (i - 1)) cout << " ";
-				else cout << "*";
+			//nums
+			int num = n - i + 1;
+			for (int nums = 1; nums <= total - (2 * (i - 1)); ++nums) {
+
+				if (nums + (i - 1) < n + 1) {
+					//print dec numbers
+					cout << num-- << " ";
+				}
+				else if (nums + (i - 1) == n + 1) {
+					cout << 0 << " ";
+					num = 1;
+				}
+				else {
+					// print inc numbers
+					cout << num++ << " ";
+				}
+			}
+		}
+		else {
+			//spaces
+			for (int spaces = 1; spaces <= total - i ; ++spaces) {
+				cout << "  ";
+			}
+			//nums
+			int num = i - n - 1;
+			for (int nums = 1; nums <= total - (2 * (total - i)); ++nums) {
+				if (nums + (total - i ) < n + 1) {
+					//print dec numbers
+					cout << num-- << " ";
+				}
+				else if (nums + (total - i ) == n + 1) {
+					cout << 0 << " ";
+					num = 1;
+				}
+				else {
+					// print inc numbers
+					cout << num++ << " ";
+				}
 			}
 		}
 		cout << endl;
