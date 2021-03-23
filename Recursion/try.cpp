@@ -1,17 +1,21 @@
-// try.cpp
+// subsets.cpp
 #include <iostream>
-#include<vector>
+#include <vector>
+#define pb push_back
+#define mp make_pair
+#define vi vector<int>
 using namespace std;
 
-int factorialOfNumber(int n) {
-	if (n == 0) return 1;
-	return n * factorialOfNumber(n - 1);
-}
+// void printSubsets(vi v, int n, int target, vi ans = {}, int sum = 0) {
+// 	return;
+// }
 
 int main() {
-	// int n = 5;
-	// cout << factorialOfNumber(n);
-	vector<int> v({1, 2, 4, 5});
-	for (auto el : v) cout << el;
+	int n = 0, target = 0;
+	cin >> n;
+	vi v(n);
+	for (int i = 0; i < n; i++) cin >> v[i];
+	cin >> target;
+	printSubsets(v, n, target);
 	return 0;
 }
