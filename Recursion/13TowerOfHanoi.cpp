@@ -2,15 +2,19 @@
 #include <iostream>
 using namespace std;
 
+int ans = 0;
 void moveDisks(int n, char src, char dest, char helper) {
 	if (n == 0 ) return;
 	moveDisks(n - 1, src, helper, dest);
-	cout << "move " << n << "th disk from " << src << " to " << dest << endl;
+	cout << "Move " << n << "th disc from T" << src << " to T" << dest << endl;
+	ans++;
 	moveDisks(n - 1, helper, dest, src);
 }
 
 int main() {
 	int n = 3;
-	moveDisks(n, 'A', 'C', 'B');
+	cin >> n;
+	moveDisks(n, '1', '2', '3');
+	cout << ans;
 	return 0;
 }

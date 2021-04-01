@@ -1,10 +1,11 @@
 // upper - lower - bound.cpp
 #include <iostream>
+#include <string.h>
 #define ll long long
 #define MX 100000
 using namespace std;
 
-int binarySearchUpper(ll arr[], int s, int e, ll key) {
+int binarySearchUpper(int arr[], int s, int e, int key) {
 	int ans = -1;
 	while (s <= e) {
 		int m = (s + e) / 2;
@@ -22,7 +23,7 @@ int binarySearchUpper(ll arr[], int s, int e, ll key) {
 	return ans;
 }
 
-int binarySearchLower(ll arr[], int s, int e, ll key) {
+int binarySearchLower(int arr[], int s, int e, int key) {
 	int ans = -1;
 	while (s <= e) {
 		int m = (s + e) / 2;
@@ -41,21 +42,19 @@ int binarySearchLower(ll arr[], int s, int e, ll key) {
 }
 
 int main() {
-	ll arr[MX] = {0};
+	// ll arr[MX] = {0};
 	int n;
 
 	//input array
 	cin >> n;
+	int key;
+	cin >> key;
+	int *arr = (int*)malloc(sizeof(int) * n);
 	for (int i = 0; i < n; i++) cin >> arr[i];
 
 
-	int q;
-	cin >> q;
 
-	while (q--) {
-		ll key;
-		cin >> key;
-		cout << binarySearchLower(arr, 0, n - 1, key) << " " << binarySearchUpper(arr, 0, n - 1, key) << endl;
-	}
+	cout << binarySearchLower(arr, 0, n - 1, key) << " " << binarySearchUpper(arr, 0, n - 1, key) << endl;
+
 	return 0;
 }
