@@ -83,9 +83,9 @@ int main() {
 	ListNode *head2 = NULL;
 	insertAtTail(head2,5);
 	insertAtTail(head2,4);
-	insertAtTail(head2,3);
+	insertAtTail(head2,-3);
 	insertAtTail(head2,2);
-	insertAtTail(head2,1);
+	insertAtTail(head2,-1);
 	head2 = mergeSort(head2);
 	printList(head2);
 
