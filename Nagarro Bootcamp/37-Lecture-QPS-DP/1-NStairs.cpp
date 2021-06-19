@@ -19,6 +19,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+// tc k^n
 int waysToClimb(int n, int k) {
 	// base case - if there is no step to climb, means standing on the groud floor
 	if(n == 0) 
@@ -35,6 +36,7 @@ int waysToClimb(int n, int k) {
 	return ways;
 }
 
+// tc n*k
 int waysToClimb2(int n, int k, vector<int> &dp) {
 	// base case - if there is no step to climb, means standing on the groud floor
 	if(n == 0) 
@@ -61,6 +63,7 @@ int waysToClimbTD(int n, int k) {
 
 // bottom up
 // tabulization
+// tc n*k
 int waysToClimbBU(int n, int k) {
 	vector<int> dp(n+1,0);
 	dp[0] = 1;
@@ -75,6 +78,27 @@ int waysToClimbBU(int n, int k) {
 	return dp[n];
 }
 
+// tc (n+k) => (n)
+// to calc dp[i] = dp[i-1]+d[i-2]+dp[i-3]
+// [...x,y,z,x+y+z,dp[i]]
+// dp[i] = y+z+x+y+z = x+2y+2z
+// dp[i] = 2dp[i-1] (x+y+z) - dp[i-k-1] (x)
+int waysToClimbBUOptimized(int n, int k) {
+	vector<int> dp(n+1,0);
+	dp[0] = 1;	
+	dp[1] = 1;
+
+	for(int i=2;i<=k;i++) {
+		dp[i] = 2*dp[i-1];
+	}
+
+	for(int i=k+1;i<=n;i++) {
+		dp[i] = 2*dp[i-1] - dp[i-k-1];
+	}
+
+	return dp[n];
+}
+
 int main() {
 
 	cout<<waysToClimb(2,3)<<endl;
@@ -85,5 +109,9 @@ int main() {
 
 	cout<<waysToClimbBU(2,3)<<endl;
 	cout<<waysToClimbBU(4,3)<<endl;
+
+	cout<<waysToClimbBUOptimized(2,3)<<endl;
+	cout<<waysToClimbBUOptimized(4,3)<<endl;
+
 	return 0;
 }

@@ -14,6 +14,7 @@ string minWindow(string s, string t) {
 	int j = 0;
 	string ans = "";
 	bool isAnyAnsFound = false;
+	
 	while (j < s.size()) {
 		//add calculations for curr char
 		if (mp.count(s[j]) != 0) {
