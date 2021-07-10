@@ -1,21 +1,30 @@
-// subsets.cpp
-#include <iostream>
-#include <vector>
-#define pb push_back
-#define mp make_pair
-#define vi vector<int>
+// try.cpp
+#include<bits/stdc++.h>
 using namespace std;
 
-// void printSubsets(vi v, int n, int target, vi ans = {}, int sum = 0) {
-// 	return;
-// }
+
 
 int main() {
-	int n = 0, target = 0;
-	cin >> n;
-	vi v(n);
-	for (int i = 0; i < n; i++) cin >> v[i];
-	cin >> target;
-	printSubsets(v, n, target);
+	string s = "my name is anshul bansal";
+	char *arr = new char[s.size()+1];
+
+	strcpy(arr,s.c_str());
+
+	for(int i=0;i<s.size();i++) {
+		cout<<arr[i];
+	}
+
+	char*  temp = strtok(arr," ");
+	// cout<<temp<<endl;
+	while(temp!=NULL) {
+		cout<<temp<<endl;
+		temp = strtok(NULL," ");
+	}
+
+
+	string f = "name";
+	int  pos = s.find(f);
+	cout<<pos;
+
 	return 0;
 }

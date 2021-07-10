@@ -59,9 +59,11 @@ int solveBU(string s1, string s2) {
 
 int longestCommonSubstring(string text1, string text2) {
    	// return solveTD(text1,text2);
-   	return solveBU(text1,text2);
 
+   	return solveBU(text1,text2);
 }
+
+
 
 int main() {
 	cout<<longestCommonSubstring("abcde","ace")<<endl;
