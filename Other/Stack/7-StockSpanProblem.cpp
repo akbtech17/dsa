@@ -1,5 +1,4 @@
 // https://practice.geeksforgeeks.org/problems/stock-span-problem-1587115621/1
-
 #include<bits/stdc++.h>
 using namespace std;
 
