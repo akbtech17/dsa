@@ -1,4 +1,12 @@
-// 6_SingleSourceShortestPath_usingBFS.cpp
+// 2_BFS_SSSP.cpp
+// Undirected Unweighted Graph
+
+// Distance Traveled by the Level Order / BFS
+// is the shortest distance in Unweighted Graph.
+
+// we have to find the shortest path from the source node
+// to all other nodes.
+
 #include <bits/stdc++.h>
 using namespace std;
 

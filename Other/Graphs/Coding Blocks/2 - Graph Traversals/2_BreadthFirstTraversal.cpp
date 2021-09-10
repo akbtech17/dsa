@@ -1,10 +1,28 @@
 // 5_BreadthFirstTraversal.cpp
+// Iterative Way to Traverse the Graph.
+
+// You start from teh given node
+// and then you go to nbrs of the curr node
+// we cant go to the two nbrs at the same time
+// so we need Queue DS to store the order of traversal of nbrs
+// just like Level Order Traversal of a Tree.
+
+// BFS
+// 1 - Vertex based technique.
+// 2 - It uses a Queue data structure. 
+// 3 - In BFS, one vertex is selected at a time when it is visited and marked then its adjacent are visited and stored in the queue. 
+// 4 - It is slower than DFS. 
+// 5 - Used to find SSSP in an Unweigted Graph, 
+//     because in BFS we reach to the dest in exploring min number of edges.
+// TIME - O(V+E) using adjecency list, O(VE) using Adjacency Matrix
+// SPACE - O(V) for storing Vertices in Queue.
+
 #include <bits/stdc++.h>
 using namespace std;
 
 template<typename T>
 class Graph{
-    unordered_map<T,list<T>> mp;
+    unordered_map<T,list<T>> mp;     // adjaceny list
 public:
     
     void addEdge(int x,int y){
@@ -40,6 +58,7 @@ public:
         }
     }
 };
+
 
 int main() 
 {
