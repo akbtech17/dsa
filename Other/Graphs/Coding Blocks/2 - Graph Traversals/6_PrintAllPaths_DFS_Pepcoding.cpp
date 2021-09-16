@@ -17,6 +17,8 @@ using namespace std;
 // 0
 // 6
 
+
+
 class Graph {
 	map<int,list<pair<int,int>>> adjList;
 	vector<string> ans;
@@ -37,20 +39,30 @@ public:
 		isvis[src] = false;
 		return;
 	}
-	bool mycomp(string &s1, string &s2) {
-		if(s1.size() == s2.size()) return s1>s2;
-		else return s1.size()<s2.size();
-		return false;
-	}
-	void printAllPaths_DFS(int src, int dest, int V) {
+	// line 40 - yeh comparator kuch problem create krra hai!
+	
+	vector<string> returnAllPaths_DFS(int src, int dest, int V) {
 		vector<bool> isvis(V,false);
 		recurse(src,dest,isvis);
-
-		sort(ans.begin(),ans.end(),mycomp);
-		for(auto path : ans) cout<<path<<endl;
-		return;
+		return ans;
 	}
 };
+
+bool mycomp (string &a, string &b) {
+	// Check if a string is present as
+    // prefix in another string, then
+    // compare the size of the string
+    // and return the larger size
+    if (a.compare(0, b.size(), b) == 0
+        || b.compare(0, a.size(), a) == 0)
+ 
+        return a.size() > b.size();
+ 
+    // Else return lexicographically
+    // smallest string
+    else
+        return a < b;
+}
 
 int main() {
 	Graph G;
@@ -65,6 +77,8 @@ int main() {
 
 	int src,dest;
 	cin>>src>>dest;
-	G.printAllPaths_DFS(src,dest,V);
+	vector<string> ans = G.returnAllPaths_DFS(src,dest,V);
+	sort(ans.begin(),ans.end(),mycomp);
+	for(auto path : ans) cout<<path<<endl;
 	return 0;
 }
