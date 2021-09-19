@@ -1,7 +1,10 @@
 // 9_LevelOrderZigZag.cpp
 // https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/
-// TC - 
-// SC - 
+
+// So basically we use 2 stacks to traverse in Zig Zag fashion.
+
+// TC - O(N)
+// SC - O(N)
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -17,29 +20,40 @@ class Solution {
 	vector<vector<int>> ans;
 public:
     vector<vector<int>> zigzagLevelOrder(TreeNode* root) {
-        queue<TreeNode*> q;
-
         if(!root) return ans;    // most important edge case
-
-        q.push(root);
-        q.push(NULL);
+        
+        stack<TreeNode*> mn_stk, ch_stk;
+        mn_stk.push(root);
 
         vector<int> clevel;
+        bool leftToRight = true;
 
-        while(!q.empty()) {
-        	TreeNode *currnode = q.front();
-        	q.pop();
+        while(!mn_stk.empty()) {
+        	// pop the current node
+        	TreeNode *currnode = mn_stk.top();
+        	mn_stk.pop();
+        	clevel.push_back(currnode->val);
 
-        	if(currnode == NULL) {
-        		if(!q.empty()) q.push(NULL);
-        		ans.push_back(clevel);
-        		clevel.clear();
-        		continue;
+        	// push its children
+        	if(leftToRight) {
+        		if(currnode->left) ch_stk.push(currnode->left);
+        		if(currnode->right) ch_stk.push(currnode->right);
+        	}
+        	else {
+        		if(currnode->right) ch_stk.push(currnode->right);
+        		if(currnode->left) ch_stk.push(currnode->left);
         	}
 
-        	clevel.push_back(currnode->val);
-        	if(currnode->left) q.push(currnode->left);
-        	if(currnode->right) q.push(currnode->right);
+        	// check if the curr level is over
+        	if(mn_stk.empty()) {
+        		// make next level as curr level
+        		swap(mn_stk,ch_stk);
+        		// save the values of curr level
+        		ans.push_back(clevel);
+        		clevel.clear();
+        		// change the direction of traversal
+        		leftToRight = !leftToRight;
+        	}
         }
 
         return ans;
