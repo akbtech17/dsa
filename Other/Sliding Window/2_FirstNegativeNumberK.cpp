@@ -1,10 +1,14 @@
-// fw2 - first - negative - number - k.cpp
+// 2_FirstNegativeNumberK.cpp
+// https://practice.geeksforgeeks.org/problems/first-negative-integer-in-every-window-of-size-k3345/1
+
+// TC - O(N)
+// SC - O(K)
+
 #include <iostream>
 #include <queue>
 using namespace std;
 
 void findFirstNegativeK(int *arr, int n , int k) {
-
 	int s = 0;
 	int e = 0;
 	queue<int> q;

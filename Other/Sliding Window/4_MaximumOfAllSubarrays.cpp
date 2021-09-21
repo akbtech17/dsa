@@ -1,4 +1,9 @@
-// fw4 - maximum - of - all - subarrays.cpp
+// 4_MaximumOfAllSubarrays.cpp
+// https://leetcode.com/problems/sliding-window-maximum/
+
+// TC - O(N)
+// SC - O(N)
+
 #include <bits/stdc++.h>
 #define vi vector<int> 
 #define pb push_back
@@ -12,7 +17,7 @@ vector<int> maxSlidingWindow(vector<int>& nums, int k) {
 	list<int> l;
 	while(e<nums.size()) {
 		// include current calcs
-		while(l.size()>0 and l.back(n)<nums[e]) l.pop_back();
+		while(l.size()>0 and l.back()<nums[e]) l.pop_back();
 		l.push_front(nums[e]);
 
 		int ws = e-s+1;

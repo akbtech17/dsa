@@ -1,4 +1,9 @@
-// longest - substring - with - k - unique - chars.cpp
+// 6_LongestSubstringWithKUniqueChars.cpp
+// https://practice.geeksforgeeks.org/problems/longest-k-unique-characters-substring/0#
+
+// TC - O(N)
+// SC - O(1)
+
 #include <iostream>
 #include <string>
 using namespace std;

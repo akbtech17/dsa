@@ -1,4 +1,9 @@
-// fw3 - count - occurences - of - anagram.cpp
+// 3_CountOccurencesOfAnagrams.cpp
+// https://leetcode.com/problems/find-all-anagrams-in-a-string/
+
+// TC - O(N)
+// SC - O(N)
+
 #include <bits/stdc++.h>
 #include <string>
 #include <map>
@@ -82,7 +87,7 @@ vector<int> findAnagrams(string str, string pat) {
 
 int main() {
 	string s = "aabaabaa", t = "aaba";
-	cin >> s >> t;
+	// cin >> s >> t;
 
 	countAnagrams(s, t);
 

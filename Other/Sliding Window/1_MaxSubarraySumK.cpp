@@ -1,10 +1,14 @@
-// fw1 - max - subarray - sum - k.cpp
+// 1_MaxSubarraySumK.cpp
+// https://practice.geeksforgeeks.org/problems/max-sum-subarray-of-size-k5313/1#
+
+// TC - O(N)
+// SC - O(1)
+
 #include <iostream>
 #include <climits>
 using namespace std;
 
 void findMaxSubarraySumK(int *arr, int n , int k) {
-
 	int s = 0;
 	int e = 0;
 	int max_sum = INT_MIN;
