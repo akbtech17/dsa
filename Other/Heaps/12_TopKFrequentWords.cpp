@@ -1,9 +1,9 @@
 // 12_TopKFrequentWords.cpp
 // https://leetcode.com/problems/top-k-frequent-words/
 
-// TC
-// SC
 
+// TC - O()
+// SC - O()
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -38,6 +38,3 @@ public:
     }
 };
 
-int main() {
-
-}

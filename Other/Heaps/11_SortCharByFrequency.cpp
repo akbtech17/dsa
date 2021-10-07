@@ -18,7 +18,7 @@ public:
         for(auto el : s) {
             mp[el]++;
         }
-        priority_queue<int,char>> pq;
+        priority_queue<pair<int,char>> pq;
         for(auto p : mp) {
         	pq.push({p.second,p.first});
         }

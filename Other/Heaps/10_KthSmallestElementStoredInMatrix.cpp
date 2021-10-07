@@ -1,4 +1,10 @@
 // 10_KthSmallestElementStoredInMatrix.cpp
+// https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/
+
+// TC - O(M*N + KlogK)
+// SC - O()
+#include <bits/stdc++.h>
+using namespace std;
 typedef pair<int,pair<int,int>> customPair;
 
 class Solution {

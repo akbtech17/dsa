@@ -1,11 +1,14 @@
 // 5_ConnectingRopes.cpp
 // https://practice.geeksforgeeks.org/problems/minimum-cost-of-ropes-1587115620/1
+// https://ide.codingblocks.com/s/632745
 
+// TC - O(NlogN)
+// SC - O(N)
 #include <bits/stdc++.h>
 using namespace std;
 
 class Solution {
-    public:
+public:
     long long minCost(long long arr[], long long n) {
     	priority_queue<long long, vector<long long>, greater<long long>> mnheap;
     	for(int i=0; i<n; i++) 
@@ -27,6 +30,6 @@ class Solution {
 int main() {
 	Solution S;
 	long long arr[] = {4, 3, 2, 6};
-	cout<<S.minCost(arr,1);
+	cout<<S.minCost(arr,4);
 	return 0; 
 }

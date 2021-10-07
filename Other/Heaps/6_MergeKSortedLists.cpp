@@ -1,5 +1,9 @@
 // 6_MergeKSrotedLists.cpp
 // https://leetcode.com/problems/merge-k-sorted-lists/submissions/
+// https://ide.codingblocks.com/s/632747
+
+// TC - O(NKlogK)
+// SC - O(K)
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -48,9 +52,3 @@ public:
         return head;
     }
 };
-
-
-int main() {
-	Solution S;
-	return 0; 
-}
