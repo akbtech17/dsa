@@ -1,11 +1,23 @@
-// 2-SortTheArrayQuadraticEquation.cpp
-
+// SortAnArrayAfterApplyingTheGivenEquation.cpp
 // https://www.geeksforgeeks.org/sort-array-applying-given-equation/
+// https://ide.codingblocks.com/s/635301
 
-// We have an integer array that is sorted in ascending order. 
+// Question - We have an integer array that is sorted in ascending order. 
 // We also have 3 integers A, B and C. We need to apply A*x*x + B*x + C for 
 // each element x in the array and sort the modified array. 
 
+// Approach - Using Two Pointers and Merging Two Sorted Arrays
+// after transforming, there will be either +ve parabola or -ve  parabola of values formed
+// which depends solely on the value of a.
+
+// if a is positive = +ve parabola
+// else if a is positive = -ve parabola
+
+// depending on the type of parabola, we will try to pick the values from the extreme ends
+// and try to place them in the ans vector.
+
+// TC - O(N)
+// SC - O(1)
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -35,7 +47,7 @@ vector<int> sortTransformedArray(vector<int> &nums, int a, int b, int c) {
 		}
 	}
 	else {
-		// i have -ve parabola, fill from eft to right
+		// i have -ve parabola, fill from left to right
 		int k = 0;
 		while(i<=j) {
 			if(transform(nums[i],a,b,c)<transform(nums[j],a,b,c)) {

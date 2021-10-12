@@ -52,3 +52,46 @@ public:
         return false;
     }
 };
+
+
+class Solution2 {
+public:
+	bool dfs(vector<vector<char>> &board, int i, int j, int idx, string &word,vector<vector<bool>>& isvis) {
+		if(idx == word.size()) {
+			return true;
+		}
+		if(i<0 or i>=board.size() or j<0 or j>=board[0].size())
+			return false;
+		if(word[idx]!=board[i][j]) return false;
+		if(isvis[i][j]) return false;
+		isvis[i][j] = true;
+		
+		bool chotaAns = 
+			dfs(board,i+1,j,idx+1,word,isvis) or
+			dfs(board,i-1,j,idx+1,word,isvis) or
+			dfs(board,i,j+1,idx+1,word,isvis) or
+			dfs(board,i,j-1,idx+1,word,isvis);
+
+		// backtracking step - mark unvis
+		isvis[i][j] = false;
+		return chotaAns;
+	}
+
+    bool exist(vector<vector<char>>& board, string word) {
+        int m = board.size();
+        int n = board[0].size();
+		vector<vector<bool>> isvis(m,vector<bool>(n,false));
+        for(int i=0; i<m; i++) {
+        	for(int j=0; j<n; j++) {
+        		// if we found starting char of word at any cell
+        		// we try to run dfs and see if we are able to recover
+        		// the rem string
+        		// if true, ret true
+        		// else try the same for other blocks.
+        		if(board[i][j] == word[0] and dfs(board, i, j, 0, word, isvis))
+        			return true;
+        	}
+        }
+        return false;
+    }
+};
