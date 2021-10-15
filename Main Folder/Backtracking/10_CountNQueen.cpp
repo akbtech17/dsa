@@ -1,4 +1,9 @@
-#include <iostream>
+// 10_CountNQueen.cpp
+// https://leetcode.com/problems/n-queens-ii/
+
+// TC - 
+// SC - 
+#include <bits/stdc++.h>
 using namespace std;
 
 int total_ways = 0;
@@ -64,6 +69,50 @@ bool solveNQueenProblem(int board[][12], int n, int i = 0) {
 	//toh we'll return back false
 	return false;
 }
+
+class Solution {
+    int total_sol;
+public:
+    bool isSafe(vector<vector<int>> board, int i, int j, int n) {
+        // check for col
+        for(int row=0; row<=i; row++) 
+            if(board[row][j] == 1) return false;
+        //left diagnoal
+        int x = i;
+        int y = j;
+        while(x>=0 and y>=0) 
+            if(board[x--][y--] == 1) return false;
+        
+        // right diagonal
+        x = i;
+        y = j;
+        while(x>=0 and y<n) 
+            if(board[x--][y++] == 1) return false;
+        
+        return true;
+    }
+    bool solve(int n, vector<string> board, int i=0) {
+        if(i == n) {
+            total_sol++;
+            return false;  // to check for all possible solutions
+        }
+        for(int j=0; j<n; j++) {
+            if(isSafe(board,i,j,n)) {
+                board[i][j] = 1;
+                bool bakiRakhPare = solve(n,board,i+1);
+                if(bakiRakhPare) return true;
+            }
+            board[i][j] = 0;
+        }
+        return false;
+    }
+    int totalNQueens(int n) {
+        total_sol = 0;
+        vector<vector<int>> board(n,vector<int>(n,0));
+        solve(n,board);
+        return total_sol;
+    }
+};
 
 int main() {
 	int board[12][12] = {0};
