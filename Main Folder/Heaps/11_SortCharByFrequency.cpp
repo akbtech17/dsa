@@ -1,35 +1,32 @@
 // 11_SortCharByFrequency.cpp
 // https://leetcode.com/problems/sort-characters-by-frequency/
+// https://ide.codingblocks.com/s/639229
 
+// TC - O(NLogN)
+// SC - O(N)
 #include <bits/stdc++.h>
 using namespace std;
 
-// struct comp {
-//     bool operator()(int,char> p1,int,char> p2) {
-//         return p1.second<p2.second;
-//     }
-// };
-
 class Solution {
 public:
-    string frequencySort(string s) {
-        string ans;
+    string frequencySort(string str) {
         map<char,int> mp;
-        for(auto el : s) {
-            mp[el]++;
-        }
+        for(auto ch : str) mp[ch]++;
+        
         priority_queue<pair<int,char>> pq;
-        for(auto p : mp) {
-        	pq.push({p.second,p.first});
-        }
+        for(auto p : mp) pq.push({p.second,p.first});
+        
+        string ans = "";
         while(!pq.empty()) {
-            char ch = pq.top().first;
-            int fre = pq.top().second;
-            pq.pop();
+            int fre = pq.top().first;
+            char ch = pq.top().second;
+            
             while(fre--) {
-                ans.push_back(ch);
+                ans += ch;    
             }
+            pq.pop();
         }
+        
         return ans;
     }
 };
