@@ -1,9 +1,11 @@
 // 51_WordBreak.cpp
 // https://leetcode.com/problems/word-break/
+// https://www.youtube.com/watch?v=2NaaM_z_Jig&t=1627s
+// https://ide.codingblocks.com/s/642851
 #include <bits/stdc++.h>
 using namespace std;
 
-// Approach - Backtracking
+// Approach - Backtracking (TLE)
 // TC - O(2^N)
 // SC - O(2^N)
 class Solution1 {
@@ -21,7 +23,7 @@ public:
 		}
 		return false;
 	}
-    bool wordBreak(string str, vector<string>& wordDict) {
+    bool wordBreak(string str, vector<string> wordDict) {
         unordered_map<string,int> mp;
         for(string word: wordDict) mp[word] = 1;
 
@@ -30,56 +32,45 @@ public:
 };
 
 
-// Approach2 - Backtracking + Memoization (TopDown DP)
-// TC - O(2^N)
-// SC - O(2^N)
-// class Solution {
-// public:
-//     bool wordBreak(string s, vector<string>& wordDict) {
-//         unordered_set<string> wordSet(wordDict.begin(), wordDict.end());
-//         vector<int> memo(s.size(), -1);
-//         return check(s, wordSet, 0, memo);
-//     }
-//     bool check(string s, unordered_set<string>& wordSet, int start, vector<int>& memo) {
-//         if (start >= s.size()) 
-//             return true;
-//         if (memo[start] != -1) 
-//             return memo[start];
-//         for (int i = start + 1; i <= s.size(); ++i) {
-//             if (wordSet.count(s.substr(start, i - start)) && check(s, wordSet, i, memo)) {
-//                 memo[start] = 1;
-//                 return memo[start];
-//             }
-//         }
-//         memo[start] = 0;
-//         return memo[start];
-//     }
-// };
+// Approach - Bottom Up DP (Accepted)
+// TC - O(N*S) where N = str.size() and S = len of the largest string
+// SC - O(N*S)
 class Solution2 {
 public:
-	int recurse(string str, unordered_map<string,int> &mp, vector<int> &dp,int start = 0) {
-		int n = str.size();
-		if(n == 0) return dp[start] = 1;
-		if(dp[start] != -1) return dp[start];
-
-		for(int i=0; i<n; i++) {
-			string prefix = str.substr(0,i+1);
-			if(mp[prefix] == 1) {
-				string suffix = str.substr(i+1);
-				bool furtherBreakHoParaHai = recurse(suffix,mp,dp,i+1);
-				if(furtherBreakHoParaHai) return dp[start] = 1;
-			}
-		}
-		return dp[start] = 0;
-	}
-    bool wordBreak(string str, vector<string>& wordDict) {
-        unordered_map<string,int> mp;
-        for(string word: wordDict) mp[word] = 1;
-        vector<int> dp(str.size()+1,-1);
-        return recurse(str,mp,dp) == 0 ? false : true;
+    bool wordBreak(string str, vector<string> wordDict) {
+        int n = str.size();
+        vector<bool> dp(n, false);
+       
+        map<string,int> mp;
+        for(auto wrd : wordDict) mp[wrd]++;
+        
+        for(int i=0; i<n; i++) {
+            for(int j=0; j<=i; j++) {
+                string suffix = str.substr(j,i-j+1);
+                if(mp.count(suffix)>0) {
+                    if(j-1<0 or (j-1>=0 and dp[j-1])) {
+                        dp[i] = true;
+                        break;
+                    }
+                }
+            }
+        }
+        return dp[n-1]; 
     }
 };
 
-int main() {
 
+int main() {
+	Solution1 S1;
+	cout<<S1.wordBreak("leetcode",{"leet","code"})<<endl;
+	cout<<S1.wordBreak("applepenapple",{"apple","pen"})<<endl;
+	cout<<S1.wordBreak("catsandog",{"cats","dog","sand","and","cat"})<<endl;
+
+
+	Solution2 S2;
+	cout<<S2.wordBreak("leetcode",{"leet","code"})<<endl;
+	cout<<S2.wordBreak("applepenapple",{"apple","pen"})<<endl;
+	cout<<S2.wordBreak("catsandog",{"cats","dog","sand","and","cat"})<<endl;
+
+	return 0;
 }
