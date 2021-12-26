@@ -1,34 +1,46 @@
+// 2_TopologicalSort_DAG_DFS.cpp
 #include <bits/stdc++.h>
 using namespace std;
 
+// Approach - DFS + Indegree Concept 
+// TC - O(V+E)
+// SC - O(V+E)
 template<typename T>
 class Graph {
 	unordered_map<T,vector<T>> adjList;
+	unordered_map<T,int> indegree;
 public:
 	void addEdge(T src, T dest) {
 		adjList[src].push_back(dest);
-		// adjList[dest].push_back(src);
-	}
-	void recurse(T src, unordered_map<T,bool> &isvis, list<T> &ordering) {
-		// cout<<src<<" ";
-		isvis[src] = true;
-		for(auto nbr : adjList[src]) {
-			if(isvis[nbr] == false) recurse(nbr,isvis,ordering);
-		}
-
-		// at the point of returning back
-		ordering.push_front(src);
+		indegree[src] = 0;
+		indegree[dest] = 0;
 		return;
 	}
-	void dfs(T src) {
-		unordered_map<T,bool> isvis;
-		list<T> ordering;
+	void dfs(T src, vector<T> &ts) {
+		ts.push_back(src);
+		for(auto nbrs: adjList[src]) {
+			indegree[nbrs]--;
+			if(indegree[nbrs] == 0) dfs(nbrs,ts);
+		}
+		return;
+	}
+	vector<T> getTopologicalOrder() {
+		vector<T> ts;
+		
+		for(auto p: adjList) {
+			for(auto v: p.second) indegree[v]++;
+		}
 
-		for(auto p : adjList) isvis[p.first] = false;
-		recurse(src,isvis,ordering);
+		vector<T> src;
+		for(auto p: indegree) {
+			if(p.second == 0) src.push_back(p.first);
+		}
 
-		// print the Topo Sort
-		for(auto el : ordering) cout<<el<<" ";
+		for(auto s: src) {
+			dfs(s,ts);
+		}
+
+		return ts;
 	}
 };
 
@@ -42,6 +54,7 @@ int main() {
 	G.addEdge("DataSet","FaceRecog");
 	G.addEdge("DL","FaceRecog");
 
-	G.dfs("Python");
+	vector<string> ts = G.getTopologicalOrder();
+	for(auto str: ts) cout<<str<<endl;
 	return 0;
 }
