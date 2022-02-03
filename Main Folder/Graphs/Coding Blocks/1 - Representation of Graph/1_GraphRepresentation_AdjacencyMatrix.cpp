@@ -1,4 +1,5 @@
 // 1_GraphRepresentation_AdjacencyMatrix.cpp
+// Code - 
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -9,13 +10,13 @@ class Graph1 {
 public:
 	Graph(int vertices) {
 		this->n = vertices;
-		// cout<<n;
+		
 		this->adjMatrix = new bool*[n];
 		for(int i=0; i<n; i++) {
 			adjMatrix[i] = new bool[n];
 			memset(adjMatrix[i], false, sizeof(adjMatrix[i]));
 		}
-		// printGraph();
+	
 	}
 	void inputGraph() {
 		for(int i=0; i<n; i++) {
