@@ -1,9 +1,12 @@
-// 8-LargestHistogram.cpp
-// https://leetcode.com/problems/largest-rectangle-in-histogram/
-
+// 10_LargestRectangleInHistogram.cpp
+// Problem - https://leetcode.com/problems/largest-rectangle-in-histogram/
+// Code - https://ide.codingblocks.com/s/653345
 #include<bits/stdc++.h>
 using namespace std;
 
+// Approach - Using stack, implement NSR and NSL
+// TC - O(N)
+// SC - O(N)
 vector<int> nsl(vector<int> v) {
 	stack<int> stk;
 	vector<int> ans(v.size(),-1);

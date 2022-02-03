@@ -1,6 +1,6 @@
 // 27_ReverseWordsInString.cpp
-// https://leetcode.com/problems/reverse-words-in-a-string/
-// https://ide.codingblocks.com/s/635921
+// Problem - https://leetcode.com/problems/reverse-words-in-a-string/
+// Code - https://ide.codingblocks.com/s/635921
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -63,7 +63,6 @@ public:
 // Approach3 - Two Pointers
 // TC - O(N)
 // SC - O(1)
-
 class Solution3 {
 public:
     string reverseWords(string str) {
