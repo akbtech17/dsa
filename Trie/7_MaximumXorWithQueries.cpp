@@ -1,6 +1,6 @@
 // 7_MaximumXorWithQueries.cpp
 // Question Link - https://leetcode.com/problems/maximum-xor-with-an-element-from-array/submissions/
-// Solution Link - 
+// Solution Link - https://ide.codingblocks.com/s/654140
 #include <bits/stdc++.h>
 using namespace std;
 

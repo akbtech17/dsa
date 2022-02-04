@@ -1,8 +1,12 @@
 // 2_DesignAddAndSearchWordsDataStructure.cpp
-// https://leetcode.com/problems/design-add-and-search-words-data-structure/
-
+// Question Link - https://leetcode.com/problems/design-add-and-search-words-data-structure/
+// Solution Link - https://ide.codingblocks.com/s/654129
 #include <bits/stdc++.h>
 using namespace std;
+
+// Approach: Using trie data-structure
+// TC: O(N*S)
+// SC: O(N*S)
 
 class TrieNode {
 public:

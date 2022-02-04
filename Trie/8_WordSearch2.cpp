@@ -1,11 +1,14 @@
-// 3_WrodSearch2.cpp
-// https://leetcode.com/problems/word-search-ii/
-
-
-// TC - O(NM * NM)
-// SC - 
+// 8_WordSearch2.cpp
+// Question Link - https://leetcode.com/problems/word-search-ii/
+// Solution Link - 
+// Resource - https://www.youtube.com/watch?v=h0kSTsLaZ-U
 #include <bits/stdc++.h>
 using namespace std;
+
+// Approach: using the previous trie approach, with some sorting
+//           and manipulation of idxes
+// TC: O(Q*N*32 + QlogQ + NlogN)
+// SC: O(N*32)
 
 class TrieNode {
 public:
@@ -82,4 +85,3 @@ public:
         return ans;
     }
 };
-

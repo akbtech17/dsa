@@ -1,8 +1,12 @@
-// 1_PrefixTree.cpp
-// https://leetcode.com/problems/implement-trie-prefix-tree/
-
+// 1_PrefixTree.cpp 
+// Question Link - https://leetcode.com/problems/implement-trie-prefix-tree/
+// Solution Link - https://ide.codingblocks.com/s/654128
 #include <bits/stdc++.h>
 using namespace std;
+
+// Approach: Using trie data-structure
+// TC: O(N*S)
+// SC: O(N*S)
 
 class TrieNode {
 public:
@@ -56,6 +60,3 @@ public:
     }
 };
 
-int main() {
-
-}

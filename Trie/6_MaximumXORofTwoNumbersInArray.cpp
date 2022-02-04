@@ -1,6 +1,6 @@
 // 6_MaximumXORofTwoNumbersInArray.cpp
 // Question Link - https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array/
-// Solution Link - 
+// Solution Link - https://ide.codingblocks.com/s/654139
 // Resource - https://www.youtube.com/watch?v=OUNfpFswJq8
 #include <bits/stdc++.h>
 using namespace std;
