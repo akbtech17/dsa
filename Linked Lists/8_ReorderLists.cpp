@@ -1,13 +1,12 @@
 // 8_ReorderLists.cpp
-// https://leetcode.com/problems/reorder-list/
-// https://ide.codingblocks.com/s/648074
+// Problem Link - https://leetcode.com/problems/reorder-list/
+// Code Link - https://ide.codingblocks.com/s/648074
 #include <bits/stdc++.h>
 using namespace std;
 
-
-// Approach - Storing the ptrs to the previous nodes and by recursing on the problem.
-// TC - O(Nodes)
-// SC - O(Nodes) 
+// Approach: Storing the ptrs to the previous nodes and by recursing on the problem.
+// TC: O(N)
+// SC: O(N) 
 class ListNode {
 public:
 	int val;

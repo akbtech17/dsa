@@ -1,10 +1,10 @@
 // 14_RemoveNthNodeFromEndList.cpp
-// https://leetcode.com/problems/remove-nth-node-from-end-of-list/
-// https://ide.codingblocks.com/s/636339
+// Problem Link - https://leetcode.com/problems/remove-nth-node-from-end-of-list/
+// Code Link - https://ide.codingblocks.com/s/636339
 
-// Approach - Two Pointers
-// TC - O(N)
-// SC - O(1)
+// Approach: Two Pointers
+// TC: O(N)
+// SC: O(1)
 #include <bits/stdc++.h>
 using namespace std;
 

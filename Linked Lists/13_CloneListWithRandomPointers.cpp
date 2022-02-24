@@ -1,15 +1,15 @@
 // 13_CloneListWithRandomPointers.cpp
-// https://leetcode.com/problems/copy-list-with-random-pointer/
-// https://ide.codingblocks.com/s/639930
+// Problem Link - https://leetcode.com/problems/copy-list-with-random-pointer/
+// Code Link - https://ide.codingblocks.com/s/639930
 
-// Approach - 3 Steps
-// 1. Insert the Clone Node in-between each ith, (i+1)th node
-// 2. Set the Random Ptrs 
-// 3. Seperate the two lists
+// Approach: 3 Steps
+// 1 => Insert the Clone Node in-between each ith, (i+1)th node
+// 2 => Set the Random Ptrs 
+// 3 => Seperate the two lists
 
 
-// TC - O(N)
-// SC - O(1)
+// TC: O(N)
+// SC: O(1)
 #include <bits/stdc++.h> 
 using namespace std;
 

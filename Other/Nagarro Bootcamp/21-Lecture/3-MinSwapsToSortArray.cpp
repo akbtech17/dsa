@@ -1,4 +1,5 @@
 // 3 - MinSwapsToSortArray.cpp
+// check - https://ide.codingblocks.com/s/654403
 #include <iostream>
 #include <algorithm>
 #include <string.h>
@@ -45,7 +46,7 @@ int countMinSwaps(int arr[], int n) {
 }
 
 int main() {
-	int arr[] = {8, 7, 9, 1, 3};
+	int arr[] = {7,16,14,17,6,9,5,3,18};
 	int n = sizeof(arr) / sizeof(int);
 	cout << countMinSwaps(arr, n);
 	return 0;

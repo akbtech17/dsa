@@ -1,10 +1,10 @@
 // 5_MiddleOfTheList.cpp
-// https://leetcode.com/problems/middle-of-the-linked-list/
-// https://ide.codingblocks.com/s/636340
+// Problem Link - https://leetcode.com/problems/middle-of-the-linked-list/
+// Code Link - https://ide.codingblocks.com/s/636340
 
-// Approach - Two Pointers
-// TC - O(N)
-// SC - O(1)
+// Approach: Two Pointers
+// TC: O(N)
+// SC: O(1)
 #include <bits/stdc++.h>
 using namespace std;
 
