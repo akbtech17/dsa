@@ -1,11 +1,9 @@
 // 1_GraphTraversals.cpp
+// Link - https://ide.codingblocks.com/s/657936
 
 // There are two ways of traversing a Graph 
 // 1 - BFS (Iterative Way)
 // 2 - DFS (Recursive Way)
-
- 
-
 
 // BFS
 // 1 - Vertex based technique.
@@ -14,12 +12,8 @@
 // 4 - It is slower than DFS. 
 // 5 - Used to find SSSP in an Unweigted Graph, 
 //     because in BFS we reach to the dest in exploring min number of edges.
-// TIME - O(V+E) using adjecency list, O(VE) using Adjacency Matrix
-// SPACE - O(V) for storing Vertices in Queue.
-
-
-
-
+// TC: O(V+E) using adjecency list, O(VE) using Adjacency Matrix
+// SC: O(V) for storing Vertices in Queue.
 
 // DFS
 // 1 - It uses edge based technique. 
@@ -30,5 +24,5 @@
 // 5 - DFS is more suitable for game or puzzle problems. 
 //     We make a decision, then explore all paths through this decision. 
 //     And if this decision leads to win situation, we stop.
-// TIME - O(V+E) using adjecency list, O(VE) using Adjacency Matrix
-// SPACE - O(V) to Call Stack space.
+// TC: O(V+E) using adjecency list, O(VE) using Adjacency Matrix
+// SC: O(V) to Call Stack space.

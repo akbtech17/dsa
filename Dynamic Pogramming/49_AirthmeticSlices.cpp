@@ -1,17 +1,25 @@
 // 49_AirthmeticSlices.cpp
-// https://leetcode.com/problems/arithmetic-slices/
-// https://ide.codingblocks.com/s/642102
-
+// Problem Link - https://leetcode.com/problems/arithmetic-slices/
+// Code Link - https://ide.codingblocks.com/s/642102
+// Resource Link - https://www.youtube.com/watch?v=rSi4MpGEz1M&ab_channel=Pepcoding
 #include <bits/stdc++.h>
 using namespace std;
 
-// Approach1 - 1D BU DP
-// we need to find the number of AP's suarrays, >=0
+// A1: 1D BU DP
+// we need to find the number of AP's subarrays, >= 3
 // we'll maintain the dp[i] -> no of AP's ending at nums[i]
-// at the last we will take the sum of dp[]
+// at the last we will take the sum of dp[0->n]
 
-// TC - O(N)
-// SC - O(N)
+// 0 - suppose the diff between i and i+1 el is d
+//     so the diff bw any two consecutive el must be d
+//     in short they want us to find number of AP subarrays that
+//     can be formed using nums array
+// 1 - nums.size() < 3 makes 0 APs
+// 2 - store number of APs ending at i-idx[inclusive]
+// 3 - dp[i] = dp[i-1] (all AP ending at i-1 idx will grow) + 1 (1 new AP will be born of size 3)
+
+// TC: O(N)
+// SC: O(N)
 class Solution1 {
 public:
     int numberOfArithmeticSlices(vector<int> nums) {
@@ -31,9 +39,9 @@ public:
     }
 };
 
-// Approach2 
-// TC - O(N)
-// SC - O(1)
+// A2: Using variable, instead of dp[]
+// TC: O(N)
+// SC: O(1)
 class Solution2 {
 public:
     int numberOfArithmeticSlices(vector<int> nums) {

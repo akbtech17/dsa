@@ -1,7 +1,17 @@
 // 2_GraphRepresentation_EdgeList.cpp
+// Code Link - https://ide.codingblocks.com/s/657935
 # include<bits/stdc++.h>
 using namespace std;
 
+// Edge List:
+// An edge list is a list or array of all the edges in a graph. 
+// Edge lists are one of the easier representations of a graph.
+
+// Cons:
+// O(E) time for almost all operations.
+
+// TC: O(E)
+// SC: O(E)
 class Graph {
 	int V; // no of vertices
 	vector<pair<int,int>> edgeList; // to store the edges

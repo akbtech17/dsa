@@ -1,4 +1,6 @@
 // 5_BreadthFirstTraversal.cpp
+// Code Link - https://ide.codingblocks.com/s/657938
+
 // Iterative Way to Traverse the Graph.
 
 // You start from teh given node
@@ -14,12 +16,11 @@
 // 4 - It is slower than DFS. 
 // 5 - Used to find SSSP in an Unweigted Graph, 
 //     because in BFS we reach to the dest in exploring min number of edges.
-// TIME - O(V+E) using adjecency list, O(VE) using Adjacency Matrix
-// SPACE - O(V) for storing Vertices in Queue.
-
 #include <bits/stdc++.h>
 using namespace std;
 
+// TC: O(V+E) using adjecency list, O(VE) using Adjacency Matrix
+// SC: O(V) for storing Vertices in Queue.
 template<typename T>
 class Graph{
     unordered_map<T,list<T>> mp;     // adjaceny list
@@ -36,25 +37,22 @@ public:
         // 2 - maintaing queue of type node
         queue<T> q;
 
-        // 3 - push source node and mark it visited
+        // 3 - push source node 
         q.push(src);
-        visited[src] = true;
 
         // 4 - pop the first node,
-        //     traverse its all nbrs and check for each nbr,
-        //     it the nbr is not yet visit push it in the Queue 
-        //     and mark it vis
+        //     if it is visited check for other in q
+        //     else print it, mark it vis
+        //     and traverse all its nbrs, and push it in Q
         while(!q.empty()) {
             T node = q.front();
-            cout<<node<<",";
             q.pop();
 
-            for(auto nbr:mp[node]) {
-                if(!visited[nbr]) {
-                    q.push(nbr);
-                    visited[nbr] = true;
-                }
-            }
+            if(visited[node]) continue;
+            cout<<node<<",";
+            visited[node] = true;
+
+            for(auto nbr: mp[node]) q.push(nbr);  
         }
     }
 };

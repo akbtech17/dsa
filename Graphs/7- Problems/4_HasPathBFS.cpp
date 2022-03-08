@@ -1,22 +1,12 @@
-// 5_HasPath_DFS_Pepcoding.cpp
-// https://www.pepcoding.com/resources/online-java-foundation/graphs/has-path-official/ojquestion
-#include <bits/stdc++.h>
+// 4_HasPathBFS.cpp
+// Problem Link - 
+// Code Link - 
+#include<bits/stdc++.h>
 using namespace std;
 
-
-// 7
-// 8
-// 0 1 10
-// 1 2 10
-// 2 3 10
-// 0 3 10
-// 3 4 10
-// 4 5 10
-// 5 6 10
-// 4 6 10
-// 0
-// 6
-
+// Approach: DFS
+// TC: O(V+E)
+// SC: O(V)
 class Graph {
 	map<int,list<pair<int,int>>> adjList;
 	bool ans = false;
@@ -50,6 +40,19 @@ public:
 	}
 };
 
+// Sample Test Case
+// 7
+// 8
+// 0 1 10
+// 1 2 10
+// 2 3 10
+// 0 3 10
+// 3 4 10
+// 4 5 10
+// 5 6 10
+// 4 6 10
+// 0
+// 6
 int main() {
 	Graph G;
 	int V, E;
