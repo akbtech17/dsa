@@ -28,7 +28,7 @@
 
 // Time Complexcity Analysis
 // to Unite the 2 components
-// when we use get() - returns the superparent of the componenet
+// when we use get() - returns the superparent of the component
 // get() will take O(Vertices) time
 // and when we call get() for N queries, TC => O(V*N)
 

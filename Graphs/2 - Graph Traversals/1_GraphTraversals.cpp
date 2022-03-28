@@ -5,6 +5,11 @@
 // 1 - BFS (Iterative Way)
 // 2 - DFS (Recursive Way)
 
+//     When KeyNode is closer to the LeafNode, 
+//     we use DFS, it is faster than BFS in this case
+//     While when the when KeyNode is closer to the RootNode/StartNode,
+//     we use BFS, it is faster than DFS in this case
+
 // BFS
 // 1 - Vertex based technique.
 // 2 - It uses a Queue data structure. 
