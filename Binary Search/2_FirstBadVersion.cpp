@@ -1,13 +1,12 @@
 // 2_FirstBadVersion.cpp
-// https://leetcode.com/problems/first-bad-version/
-// https://ide.codingblocks.com/s/635295
-
+// Problem Link - https://leetcode.com/problems/first-bad-version/
+// Code Link - https://ide.codingblocks.com/s/635295
 #include <bits/stdc++.h>
 using namespace std;
 
-// Approach - Iterative
-// TC - O(LogN)
-// SC - O(1)
+// Approach: Iterative
+// TC: O(LogN)
+// SC: O(1)
 #define ll long long int
 class Solution {
 public:

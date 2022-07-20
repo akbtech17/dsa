@@ -1,11 +1,12 @@
 // 6_UpperBound.cpp
-// https://ide.codingblocks.com/s/639502
-
-// TC - O(LogN) 
-// SC - O(1)
+// Problem Link - https://www.geeksforgeeks.org/implementing-upper_bound-and-lower_bound-in-c/
+// Code Link - https://ide.codingblocks.com/s/639502
 #include <bits/stdc++.h>
 using namespace std;
 
+// A1: Recursive
+// TC: O(LogN) 
+// SC: O(1)
 class Solution {
 public:
     int recurse(int s, int e, int key, vector<int>& nums) {
@@ -21,14 +22,26 @@ public:
         }
         return ans;
     }
-    int findLowerBound(vector<int> nums, int target) {
+    int findUpperBound(vector<int> nums, int target) {
         return recurse(0,nums.size()-1,target,nums);
     }
 };
 
+// A2: Inbuilt Function
+// TC: O(LogN) 
+// SC: O(1)
+class Solution2 {
+public:
+    int findUpperBound(vector<int> nums, int target) {
+        if(!binary_search(nums.begin(),nums.end(),target)) return -1;
+        int pos = upper_bound(nums.begin(),nums.end(),target) - nums.begin();
+        return pos-1;
+    }
+};
+
 int main() {
-	Solution S;
-	cout<<S.findLowerBound({1,2,3,4,5,5,5,5,9,10},5)<<endl;
+	Solution2 S;
+	cout<<S.findUpperBound({1,2,3,4,5,5,5,5,9,10},6)<<endl;
 
 	return 0;
 }

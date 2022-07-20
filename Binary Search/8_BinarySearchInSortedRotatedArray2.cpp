@@ -1,15 +1,16 @@
 // 8_BinarySearchInSortedRotatedArray2.cpp
-// https://leetcode.com/problems/search-in-rotated-sorted-array-ii/
-
-// TC - O(N) Worst, O(LogN + C) Average
-// SC - O(N)
+// Problem Link - https://leetcode.com/problems/search-in-rotated-sorted-array-ii/
+// Code Link - https://ide.codingblocks.com/s/639328
 #include <bits/stdc++.h>
 using namespace std;
 
+// Approach: Recursive
+// TC: O(N) Worst, O(LogN + C) Average
+// SC: O(N)
 class Solution {
 public:
     int recurse(int s, int e, int key, vector<int>& nums) {
-        // Base Case - 
+        // Base Case -
         // If there is no element to search, just return -1.
         if(s > e) return -1;
         

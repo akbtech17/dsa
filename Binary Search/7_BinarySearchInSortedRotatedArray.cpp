@@ -1,12 +1,12 @@
 // 7_BinarySearchInSortedRotatedArray.cpp
-// https://leetcode.com/problems/search-in-rotated-sorted-array/
-// https://ide.codingblocks.com/s/639321
-
-// TC - O(LogN)
-// SC - O(LogN)
+// Problem Link - https://leetcode.com/problems/search-in-rotated-sorted-array/
+// Code Link - https://ide.codingblocks.com/s/639321
 #include <bits/stdc++.h>
 using namespace std;
 
+// Approach: Recursive
+// TC: O(LogN)
+// SC: O(LogN)
 class Solution {
 public:
     int recurse(int s, int e, int key, vector<int>& nums) {

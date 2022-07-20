@@ -1,14 +1,12 @@
 // 3_SearchInsertPosition.cpp
-// https://leetcode.com/problems/search-insert-position/
-// https://ide.codingblocks.com/s/635296
-
+// Problem Link - https://leetcode.com/problems/search-insert-position/
+// Code Link - https://ide.codingblocks.com/s/635296
 #include <bits/stdc++.h>
 using namespace std;
 
-
-// Approach - Iterative
-// TC - O(N)
-// SC - O(1)
+// A1: Iterative
+// TC: O(N)
+// SC: O(1)
 class Solution1 {
 public:
     int searchInsert(vector<int>& nums, int target) {
@@ -21,9 +19,9 @@ public:
     }
 };
 
-// Approach - Iterative
-// TC - O(LogN)
-// SC - O(1)
+// A2: Iterative
+// TC: O(LogN)
+// SC: O(1)
 class Solution2 {
 public:
     int searchInsert(vector<int>& nums, int target) {
@@ -37,5 +35,16 @@ public:
         }
       
         return s;
+    }
+};
+
+// A3: Inbuilt Function
+// TC: O(LogN)
+// SC: O(1)
+class Solution3 {
+public:
+    int searchInsert(vector<int>& nums, int target) {
+        int pos = lower_bound(nums.begin(), nums.end(), target)-nums.begin();
+        return pos;
     }
 };

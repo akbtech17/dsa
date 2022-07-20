@@ -1,13 +1,12 @@
 // 4_GuessNumberHigherOrLower.cpp
-// https://leetcode.com/problems/guess-number-higher-or-lower/
-// https://ide.codingblocks.com/s/635298
-
+// Problem Link - https://leetcode.com/problems/guess-number-higher-or-lower/
+// Code Link - https://ide.codingblocks.com/s/635298
 #include <bits/stdc++.h>
 using namespace std;
 
-// Approach - Recursive
-// TC - O(LogN)
-// SC - O(LogN)
+// Approach: Recursive
+// TC: O(LogN)
+// SC: O(LogN)
 class Solution {
 public:
     int recurse(int s, int e) {

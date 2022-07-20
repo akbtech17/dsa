@@ -1,13 +1,12 @@
 // 1_BinarySearch.cpp
-// https://leetcode.com/problems/binary-search/
-// https://ide.codingblocks.com/s/635294
-
+// Problem Link - https://leetcode.com/problems/binary-search/
+// Code Link - https://ide.codingblocks.com/s/635294
 #include <bits/stdc++.h>
 using namespace std;
 
-// Approach - Recursive
-// TC - O(LogN)
-// SC - O(LogN)
+// A1: Recursive
+// TC: O(LogN)
+// SC: O(LogN)
 class Solution1 {
 public:
     int recurse(vector<int>& nums, int key, int s, int e) {
@@ -30,9 +29,9 @@ public:
 };
 
 
-// Approach - Iterative
-// TC - O(LogN)
-// SC - O(1)
+// A2: Iterative
+// TC: O(LogN)
+// SC: O(1)
 class Solution2 {
 public:
     int search(vector<int>& nums, int target) {
@@ -46,5 +45,16 @@ public:
     		else e = m-1;
     	}
         return -1;
+    }
+};
+
+// A3: Using Inbuilt Function
+// TC: O(LogN)
+// SC: O(1)
+class Solution3 {
+public:
+    int search(vector<int>& nums, int target) {
+        int pos = lower_bound(nums.begin(),nums.end(),target)-nums.begin();
+        return  pos == nums.size() ? -1 : nums[pos] != target ? -1 : pos;
     }
 };
