@@ -12,7 +12,7 @@ struct ListNode {
     ListNode(int x, ListNode *next) : val(x), next(next) {}
 };
 
-// Approach: Iterative
+// Approach1: Iterative
 // TC: O(N)
 // SC: O(1)
 class Solution {
@@ -38,5 +38,25 @@ public:
         
         tail1->next = head2;
         return head1;
+    }
+};
+
+// Approach2: Most Concise (Iterative)
+// TC: O(N)
+// SC: O(1)
+class Solution {
+public:
+    ListNode* partition(ListNode* head, int x) {
+        ListNode node1(0), node2(0);
+        ListNode *l1 = &node1, *l2 = &node2;
+        
+        while(head!=NULL) {
+            if(head->val<x) l1 = l1->next = head;
+            else l2 = l2->next = head;
+            head = head->next;
+        }
+        l2->next = NULL;
+        l1->next = node2.next;
+        return node1.next;
     }
 };
