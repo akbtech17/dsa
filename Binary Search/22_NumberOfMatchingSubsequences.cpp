@@ -20,7 +20,7 @@ using namespace std;
 // 		   (suppose every word is of maximum size = 50 )
 // 	   Therefore, L*(x log n) is the complexity
 
-// 		SC: O(n)
+// SC: O(n)
 class Solution {
 public:
     int numMatchingSubseq (string str, vector<string>& words) {

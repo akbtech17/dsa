@@ -4,26 +4,25 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// A1: Recursive
+// A1: Iterative
 // TC: O(LogN) 
 // SC: O(1)
-class Solution {
+class Solution1 {
 public:
-    int recurse(int s, int e, int key, vector<int>& nums) {
+    int upper_bound(int s, int e, int key, vector<int>& nums) {
         int ans = -1;
         while(s<=e) {
-        	int mid = s+(e-s)/2;
-        	if(nums[mid] == key) {
-        		ans = mid;
-        		s = mid+1;
-        	}
-        	else if(key < nums[mid]) e = mid-1;
-        	else s = mid+1;
+            int m = s+(e-s)/2;
+            if(nums[m] <= key) {
+                ans = m;
+                s = m+1;
+            }
+            else e = m-1;
         }
-        return ans;
+        return ans == -1 ? 0 : ans+1;
     }
     int findUpperBound(vector<int> nums, int target) {
-        return recurse(0,nums.size()-1,target,nums);
+        return upper_bound(0,nums.size(),target,nums);
     }
 };
 
@@ -33,15 +32,23 @@ public:
 class Solution2 {
 public:
     int findUpperBound(vector<int> nums, int target) {
-        if(!binary_search(nums.begin(),nums.end(),target)) return -1;
         int pos = upper_bound(nums.begin(),nums.end(),target) - nums.begin();
-        return pos-1;
+        return pos;
     }
 };
 
 int main() {
-	Solution2 S;
+	Solution1 S;
 	cout<<S.findUpperBound({1,2,3,4,5,5,5,5,9,10},6)<<endl;
+    cout<<S.findUpperBound({0,2,3,4,5,5,5,5,9,10},1)<<endl;
+    cout<<S.findUpperBound({0,2,3,4,5,5,5,5,9,10},5)<<endl;
+    cout<<S.findUpperBound({0,2,3,4,5,5,5,5,9,10},0)<<endl;
+
+    Solution2 S2;
+    cout<<S2.findUpperBound({1,2,3,4,5,5,5,5,9,10},6)<<endl;
+    cout<<S2.findUpperBound({0,2,3,4,5,5,5,5,9,10},1)<<endl;
+    cout<<S2.findUpperBound({0,2,3,4,5,5,5,5,9,10},5)<<endl;
+    cout<<S2.findUpperBound({0,2,3,4,5,5,5,5,9,10},0)<<endl;
 
 	return 0;
 }

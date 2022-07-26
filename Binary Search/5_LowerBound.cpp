@@ -9,21 +9,18 @@ using namespace std;
 // SC: O(1)
 class Solution1 {
 public:
-    int recurse(int s, int e, int key, vector<int>& nums) {
-        int ans = -1;
-        while(s<=e) {
-        	int mid = s+(e-s)/2;
-        	if(nums[mid] == key) {
-        		ans = mid;
-        		e = mid-1;
-        	}
-        	else if(key < nums[mid]) e = mid-1;
-        	else s = mid+1;
+    int lower_bound(int s, int N, int key, vector<int>& nums) {
+        // N = size, not size-1
+        // s<N
+        while(s<N) {
+        	int m = s+(N-s)/2;
+        	if(nums[m]>=key) N = m; // we have to consider m, as it can be lower bound
+        	else s = m+1;
         }
-        return ans;
+        return s;
     }
     int findLowerBound(vector<int> nums, int target) {
-        return recurse(0,nums.size()-1,target,nums);
+        return lower_bound(0,nums.size(),target,nums);
     }
 };
 
@@ -35,18 +32,22 @@ class Solution2 {
 public:
     int findLowerBound(vector<int> nums, int target) {
         int pos = lower_bound(nums.begin(),nums.end(),target) - nums.begin();
-        return 
-            pos >= nums.size()
-            ? -1
-            : nums[pos] != target
-            ? -1
-            : pos;
+        return pos;
     }
 };
 
 int main() {
-	Solution2 S;
+	Solution1 S;
 	cout<<S.findLowerBound({1,2,3,4,5,5,5,5,9,10},6)<<endl;
+    cout<<S.findLowerBound({0,2,3,4,5,5,5,5,9,10},1)<<endl;
+    cout<<S.findLowerBound({0,2,3,4,5,5,5,5,9,10},5)<<endl;
+
+    Solution2 S2;
+    cout<<S2.findLowerBound({1,2,3,4,5,5,5,5,9,10},6)<<endl;
+    cout<<S2.findLowerBound({0,2,3,4,5,5,5,5,9,10},1)<<endl;
+    cout<<S2.findLowerBound({0,2,3,4,5,5,5,5,9,10},5)<<endl;
+    cout<<S2.findLowerBound({0,2,3,4,5,5,5,5,9,10},11)<<endl;
+    cout<<S2.findLowerBound({0,2,3,4,5,5,5,5,9,10},-1)<<endl;
 
 	return 0;
 }
