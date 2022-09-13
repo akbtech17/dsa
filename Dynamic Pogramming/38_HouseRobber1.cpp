@@ -1,18 +1,16 @@
 // 38_HouseRobber1.cpp
-// https://leetcode.com/problems/house-robber/
-// https://ide.codingblocks.com/s/639628
-
-// Approach - BU DP
-// for each house,
-// if we rob the house p1 = house[i]+dp[i-2]
-// else p2 = dp[i-1]
-// so, dp[i] = max(house[i],dp[i-2], dp[i-1])
-
-// TC - O(N)
-// SC - O(N)
+// Problem Link - https://leetcode.com/problems/house-robber/
+// Solution Link - https://ide.codingblocks.com/s/639628
 #include <bits/stdc++.h>
 using namespace std;
 
+// Approach :   BU DP
+//              for each house,
+//              if we rob the house p1 = house[i]+dp[i-2]
+//              else p2 = dp[i-1]
+//              so, dp[i] = max(house[i],dp[i-2], dp[i-1])
+// TC : O(N)
+// SC : O(N)
 class Solution {
 public:
     int rob(vector<int> nums) {
@@ -28,7 +26,6 @@ public:
         return dp[n-1];  
     }
 };
-
 
 int main() {
 	Solution S;

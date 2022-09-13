@@ -1,13 +1,12 @@
 // 33_NthFibonacciNumber.cpp
-// https://leetcode.com/problems/fibonacci-number/
-// https://ide.codingblocks.com/s/636312
-
+// Problem Link - https://leetcode.com/problems/fibonacci-number/
+// Solution Link - https://ide.codingblocks.com/s/636312
 #include <bits/stdc++.h>
 using namespace std;
 
-// Approach1 - 1D BU DP
-// TC - O(N)
-// SC - O(N)
+// A1 : 1D BU DP
+// TC : O(N)
+// SC : O(N)
 class Solution1 {
 public:
     int fib(int n) {
@@ -21,9 +20,9 @@ public:
     }
 };
 
-// Approach2 - 1D BU DP
-// TC - O(N)
-// SC - O(1)
+// A2 : Using two variables
+// TC : O(N)
+// SC : O(1)
 class Solution2 {
 public:
     int fib(int n) {

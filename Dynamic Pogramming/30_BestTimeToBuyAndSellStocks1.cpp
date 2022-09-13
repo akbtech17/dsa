@@ -1,24 +1,24 @@
 // 30_BestTimeToBuyAndSellStocks1.cpp
-// https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
-// https://www.youtube.com/watch?v=4YjEHmw1MX0
-// https://ide.codingblocks.com/s/636313
+// Problem Link - https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
+// Solution Link - https://ide.codingblocks.com/s/636313
+// Reference Link - https://www.youtube.com/watch?v=4YjEHmw1MX0
 
 #include <bits/stdc++.h>
 using namespace std;
 
-// Appraoch - Similar to Kadane's Algorithm
-// we need to find such pair of i,j
-// such that i<j, p[i]<p[j] and maximize(p[j]-p[i])
+// Approach :   Similar to Kadane's Algorithm
+//              we need to find such pair of i,j
+//              such that i<j, p[i]<p[j] and maximize(p[j]-p[i])
 
-// we consider each day as potential sellpoint
-// ki agar is din bechta toh kitna max profit hota!
+//              we consider each day as potential sellpoint
+//              ki agar is din bechta toh kitna max profit hota!
 
-// har day ka max profit check krne ke liye, 
-// we should have the least buy point at some ith day
-// which is less than curr day.
+//              har day ka max profit check krne ke liye, 
+//              we should have the least buy point at some ith day
+//              which is less than curr day.
 
-// TC - O(N)
-// SC - O(1)
+// TC : O(N)
+// SC : O(1)
 // 1 Transaction Allowed!
 class Solution {
 public:
@@ -37,4 +37,3 @@ public:
         return max_profit_so_far;
     }
 };
-
