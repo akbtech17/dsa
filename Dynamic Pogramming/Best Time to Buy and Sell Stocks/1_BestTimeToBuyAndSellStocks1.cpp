@@ -1,7 +1,7 @@
-// 30_BestTimeToBuyAndSellStocks1.cpp
+// 1_BestTimeToBuyAndSellStocks1.cpp
 // Problem Link - https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
 // Solution Link - https://ide.codingblocks.com/s/636313
-// Reference Link - https://www.youtube.com/watch?v=4YjEHmw1MX0
+// Reference Link - https://www.youtube.com/watch?v=excAOvwF_Wk&ab_channel=takeUforward
 
 #include <bits/stdc++.h>
 using namespace std;

@@ -1,32 +1,25 @@
 // 34_NthTribonacciNumber.cpp
-// https://leetcode.com/problems/n-th-tribonacci-number/
-// https://ide.codingblocks.com/s/636311
+// Problem Link - https://leetcode.com/problems/n-th-tribonacci-number/
+// Solution Link - https://ide.codingblocks.com/s/636311
 
-// Approach - 1D BU DP
-// TC - O(N)
-// SC - O(1)
 #include <bits/stdc++.h>
 using namespace std;
 
+// Approach : Three vairables
+// TC : O(N)
+// SC : O(1)
 class Solution {
 public:
     int tribonacci(int n) {
-        if(n == 0 or n == 1) return n;
-        if(n == 2) return 1;
-        
-        int n1, n2, n3;
-        n1 = 0;
-        n2 = n3 = 1;
-        
-        int ans = 0;
-        while(n>=3) {
-            ans = n1 + n2 + n3;
-            n1 = n2;
-            n2 = n3;
-            n3 = ans;
-            
-            n--;
-        } 
+        if(n <=1) return n;
+        if(n==2) return 1;
+        int a = 0, b = 1, c = 1, ans;
+        for(int i=3; i<=n; i++) {
+            ans = a+b+c;
+            a = b;
+            b = c;
+            c = ans;
+        }
         return ans;
     }
 };
