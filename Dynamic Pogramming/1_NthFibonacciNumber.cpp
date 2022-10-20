@@ -1,4 +1,4 @@
-// 33_NthFibonacciNumber.cpp
+// 1_NthFibonacciNumber.cpp
 // Problem Link - https://leetcode.com/problems/fibonacci-number/
 // Solution Link - https://ide.codingblocks.com/s/636312
 #include <bits/stdc++.h>

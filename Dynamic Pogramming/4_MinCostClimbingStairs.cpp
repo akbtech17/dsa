@@ -1,4 +1,4 @@
-// 37_MinCostClimbingStairs.cpp
+// 4_MinCostClimbingStairs.cpp
 // Problem Link - https://leetcode.com/problems/min-cost-climbing-stairs/
 // Solution Link - https://ide.codingblocks.com/s/639613
 #include <bits/stdc++.h>

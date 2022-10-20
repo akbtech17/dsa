@@ -1,7 +1,6 @@
-// 34_NthTribonacciNumber.cpp
+// 2_NthTribonacciNumber.cpp
 // Problem Link - https://leetcode.com/problems/n-th-tribonacci-number/
 // Solution Link - https://ide.codingblocks.com/s/636311
-
 #include <bits/stdc++.h>
 using namespace std;
 
