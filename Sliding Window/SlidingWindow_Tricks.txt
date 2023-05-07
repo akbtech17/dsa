@@ -1,0 +1,13 @@
+There are majorly 2 variants of Sliding Window Problems
+1. Fixed Length Window
+2. Variable Length Window
+
+Intution to solve Fixed Window Problems
+1. 2 Pointers, s = 0 & e = 0
+2. start the look till e < n
+3. note : always start window with 1 el, so add the calculations for first el
+4. then check the wlen = e-s+1
+5. if wlen < k : e++;
+6. else save the ans,
+   remove the calc for s'th el and  
+   slide the window by s++, e++

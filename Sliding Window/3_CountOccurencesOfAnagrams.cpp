@@ -5,8 +5,6 @@
 // SC - O(N)
 
 #include <bits/stdc++.h>
-#include <string>
-#include <map>
 using namespace std;
 
 void countAnagrams(string str, string t) {
