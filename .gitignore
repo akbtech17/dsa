@@ -1,1 +1,7 @@
+# Ignore binary files (executables)
 *.exe
+*.out
+*.o
+*.obj
+*.bin
+*.elf
