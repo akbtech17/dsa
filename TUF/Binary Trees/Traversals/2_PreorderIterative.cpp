@@ -13,21 +13,21 @@ class Solution {
 	// SC: O(H)
 	vector<int> preorder(TreeNode *root) {
 		vector<int> ans;
-		stack<TreeNode *> stk;
+		if (!root) return ans;
 
-		while (root || !stk.empty()) {
-			if (root != nullptr) {
-				// Display
-				ans.push_back(root->data);
-				stk.push(root);
-				// Left
-				root = root->left;
-			} else {
-				TreeNode *node = stk.top();
-				stk.pop();
-				// Right
-				root = node->right;
-			}
+		stack<TreeNode *> stk;
+		stk.push(root);
+
+		while (!stk.empty()) {
+			TreeNode *node = stk.top();
+			stk.pop();
+
+			// Display
+			ans.push_back(node->data);
+			// Right
+			if (node->right) stk.push(node->right);
+			// Left
+			if (node->left) stk.push(node->left);
 		}
 
 		return ans;
