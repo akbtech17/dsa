@@ -2,18 +2,17 @@
 using namespace std;
 
 struct TreeNode {
-  public:
+public:
 	TreeNode *left, *right;
 	int data;
 };
 
 class Solution {
-  public:
+public:
 	// TC: O(N)
 	// SC: O(H)
 	void recurse(TreeNode *root, vector<int> &ans) {
-		if (!root)
-			return;
+		if (!root) return;
 
 		ans.push_back(root->data);
 		recurse(root->left, ans);

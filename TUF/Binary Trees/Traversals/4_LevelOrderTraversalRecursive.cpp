@@ -2,18 +2,17 @@
 using namespace std;
 
 struct TreeNode {
-  public:
+public:
 	TreeNode *left, *right;
 	int data;
 };
 
 class Solution {
-  public:
+public:
 	// TC: O(N)
 	// SC: O(H)
 	void recurse(TreeNode *root, vector<vector<int>> &traversal, int d = 0) {
-		if (!root)
-			return;
+		if (!root) return;
 
 		if (traversal.size() <= d) {
 			traversal.resize(d + 1);

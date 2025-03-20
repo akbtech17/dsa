@@ -2,13 +2,13 @@
 using namespace std;
 
 struct TreeNode {
-  public:
+public:
 	TreeNode *left, *right;
 	int data;
 };
 
 class Solution {
-  public:
+public:
 	// TC: O(N)
 	// SC: O(H)
 	// Preorder 			Root->Left->Right
