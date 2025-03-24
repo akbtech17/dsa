@@ -91,7 +91,7 @@ public:
 };
 
 // Approach3: Using BS
-class Solution {
+class Solution3 {
 public:
 	// TC: O(Log(min(N1, N2)))
 	// SC: O(1)
