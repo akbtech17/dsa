@@ -1,7 +1,7 @@
 // 1_ArrangingCoins.cpp
 // https://leetcode.com/problems/arranging-coins/
 // https://ide.codingblocks.com/s/642414
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
 // Approach - Bruteforce
