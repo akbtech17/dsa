@@ -25,6 +25,7 @@ public:
 		// set min size as 1
 		this->capacity = capacity > 1 ? capacity : 1;
 	}
+
 	// O(1)
 	void put(int key, int value) {
 		// C1: If the key is already present in the Map,
@@ -58,6 +59,7 @@ public:
 		}
 		return;
 	}
+
 	// O(1)
 	int get(int key) {
 		// C1: If the key is not present in the Map
