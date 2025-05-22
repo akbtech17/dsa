@@ -2,7 +2,11 @@
 #include <map>
 using namespace std;
 
+// TopoSort only works in DAG - Directed Acyclic Graph
+
 // Approach: BFS or Kahn's Algo
+// Below solution using BFS for TopSort can also be used to detect cycles in Direct Graphs but not the DFS soltution will work same.
+
 // TC: O(V+E)
 // SC: O(V)
 class Solution {
