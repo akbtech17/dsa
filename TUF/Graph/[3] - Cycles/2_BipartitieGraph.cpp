@@ -39,3 +39,34 @@ public:
 		return true;
 	}
 };
+
+// Approach: DFS
+// TC: O(V+E)
+// SC: O(V)
+class Solution {
+public:
+	bool runDFS(int src, int col, vector<int> *adj, vector<int> &color) {
+		color[src] = col;
+
+		for (int nbr : adj[src]) {
+			if (color[nbr] == -1) {
+				if (runDFS(nbr, !col, adj, color) == false) return false;
+			} else if (color[nbr] == col)
+				return false;
+		}
+
+		return true;
+	}
+
+	bool isBipartite(int V, vector<int> adj[]) {
+		vector<int> color(V, -1);
+
+		for (int i = 0; i < V; i++) {
+			if (color[i] == -1) {
+				bool ans = runDFS(i, 0, adj, color);
+				if (!ans) return false;
+			}
+		}
+		return true;
+	}
+};
